@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopify Music</title>
+
+    <link rel="stylesheet" href="./icons/css/all.min.css" />
+    <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+    <!-- <img src="images/song-1.jpg" id="background"/> -->
+
+    <div class="app-wrapper">
+        <div class="player">
+            <audio id="music-player"></audio>
+            <div id="song-image" class="song-img" style="background-image: url('./images/song-1.jpg');"></div>
+            <div class="song-details">
+                <h2 id="song-title">Forget me too ft. Halsey</h2>
+                <h3 id="song-artist">Machine Gun Kelly</h3>
+            </div>
+            <div class="player-controls">
+                <button id="prev-btn" class="skip-btn"><i class="fas fa-backward fa-lg"></i></button>
+                <button id="play-btn" class="play"><i class="fas fa-play play-icon fa-2x"></i></i></button>
+                <button id="next-btn" class="skip-btn"><i class="fas fa-forward fa-lg"></i></button>
+            </div>
+
+           
+              <!-- update -->
+              <input
+              type="range"
+              id="progress-bar"
+              min="0"
+              max=""
+              value="0"
+              onchange="changeProgressBar()"
+              />
+              <div class="currentTime"></div>
+              <div class="durationTime"></div>
+           
+
+           
+
+            <div class="next-up">
+                <p>Next up: <span id="song-next-up">Kindest Regards by Witt Lowry</span></p>
+            </div>
+            
+
+           
+             
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

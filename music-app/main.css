@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Fira Sans", sans-serif;
+}
+
+/* html { 
+    background: url(images/song-1.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    filter: blur(10px
+    ) ;
+  } */
+
+/* body {
+    background: #EEE;
+} */
+
+
+
+body{
+    background: linear-gradient(
+    to right,
+    rgba(32, 191, 85),
+    rgba(32, 164, 243),
+    rgba(11, 79, 108)
+  );
+}
+
+
+
+.app-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    
+}
+
+.player {
+    background-color: #FFFFFF;
+    padding: 100px 50px;
+    width: 415px;
+    
+    /* max-width: 100%;
+    border-radius: 16px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); */
+
+    background-color: rgba(255, 255, 255, 0.25);
+    /* box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit; */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    /* For the fog-like glass effect */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    
+}
+
+
+
+
+
+
+.song-img {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    border-radius: 50%;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.3);
+    margin-bottom: 50px;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-image 0.4s;
+}
+
+.song-img:after {
+    content: '';
+    padding-top: 100%;
+    display: block;
+}
+
+.song-img:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border: 2px solid #EEE;
+    border-radius: 50%;
+}
+
+.song-details {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.song-details h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #313131;
+    margin-bottom: 5px;
+}
+
+.song-details h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(228, 222, 222);
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.player-controls .play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: #FE4880;
+    color: #FFF;
+    margin: 0 30px;
+
+    border: none;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+
+    /* padding-bottom: 10px; */
+
+    box-shadow: 0px 6px 12px rgba(254, 72, 128, 0.6);
+    transition: 0.4s;
+}
+
+.player-controls .skip-btn {
+    background: none;
+    border: none;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+
+    color: #CCC;
+}
+
+.player-controls .play:hover {
+    box-shadow: 0px 8px 16px rgba(254, 72, 128, 0.8);
+}
+
+
+
+.next-up p {
+    color: rgb(219, 219, 219);
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.next-up p span {
+    font-weight: 400;
+    font-style: italic;
+}
+
+.currentTime {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    bottom: 1%;
+    left: 19%;
+    z-index: 4;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: white;
+    align-items: center;
+}
+
+
+.durationTime {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    bottom: 1%;
+    right: 12%;
+    z-index: 4;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    align-items: center;
+    color: rgb(193, 255, 6);
+}
+
+#progress-bar {
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    z-index: 4;
+    /* bottom: 100px; */
+    height: 5px;
+    background: #000000;
+    width: 160pt;
+    bottom: 9%;
+    border-radius: 30px;
+    left: 25%;
+}
+
+#progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    margin-top: -3px;
+    margin-left: 0px;
+    height: 10px;
+    width: 7px;
+    border: 0;
+    background: -webkit-linear-gradient(45deg,  rgb(213, 213, 213), rgb(193, 255, 6));
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+#progress-bar::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    max-height: 5px;
+    border-radius: 30px;
+}
+
+#progress-bar:focus {
+    outline: none;
+}
+
+
+
+@media (max-width: 414px) {
+    .player {
+        min-height: 100vh;
+        border-radius: 0px;
+        padding: 75px 30px;
+    }
+}
